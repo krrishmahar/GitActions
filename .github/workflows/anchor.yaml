@@ -1,16 +1,29 @@
-- name: Set up Docker Buildx
-  uses: docker/setup-buildx-action@v2
+name: Anchore Container Scan
+on:
+  push:
+    branches:
+      - main
 
-- name: build local container
-  uses: docker/build-push-action@v4
-  with:
-    tags: localbuild/testimage:latest
-    push: false
-    load: true
+jobs:
+  anchore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-- name: Scan image
-  uses: anchore/scan-action@v6
-  with:
-    image: "krrishmahar/ping-pong-app:latest"
-    fail-build: true
-    severity-cutoff: critical
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build local container
+        uses: docker/build-push-action@v4
+        with:
+          tags: localbuild/testimage:latest
+          push: false
+          load: true
+
+      - name: Scan image with Anchore
+        uses: anchore/scan-action@v6
+        with:
+          image: "krrishmahar/ping-pong-app:lates"
+          fail-build: true
+          severity-cutoff: critical
