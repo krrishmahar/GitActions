@@ -1,0 +1,18 @@
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_Z2xhZC1yYXktODAuY2xlcmsuYWNjb3VudHMuZGV2JA
+CLERK_SECRET_KEY=sk_test_trVyHsgxYf7OZEiRUbJ9voDAHdckEwiMvmSTH0Lwe1
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
+
+
+
+# Connect to Supabase via connection pooling with Supavisor.
+DATABASE_URL="postgresql://postgres.vjwehtqxcupeezpscrvv:l8er3FN0MTRylHbs@aws-0-ap-south-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
+
+# Direct connection to the database. Used for migrations.
+DIRECT_URL="postgresql://postgres.vjwehtqxcupeezpscrvv:l8er3FN0MTRylHbs@aws-0-ap-south-1.pooler.supabase.com:5432/postgres"
+        
+
+UPLOADTHING_TOKEN='eyJhcGlLZXkiOiJza19saXZlXzFhN2M3OWIxMTE3Y2MwZWNkOTk5N2I1NDJiMmI3ZGZlMjczZjY3OGQ0YjgzZWVlZjhjNzYxNzRlY2IxNzcwNzIiLCJhcHBJZCI6ImFiZmlxZnI1MHIiLCJyZWdpb25zIjpbInNlYTEiXX0='
